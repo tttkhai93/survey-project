@@ -3,7 +3,7 @@ const {mongoose} = require('./db/mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 
-var key =require('./config/key');
+var key =require('./config/key.js');
 const port = process.env.PORT || 5000;
 const app = express();
 module.exports={app};
