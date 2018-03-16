@@ -3,7 +3,7 @@ const {mongoose} = require('./db/mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 
-var key =require('./config/key.js');
+var key =require('./config/key');
 const port = process.env.PORT || 5000;
 const app = express();
 module.exports={app};
@@ -11,7 +11,7 @@ module.exports={app};
 app.use(
   cookieSession({
     maxAge: 30*24*60*60*1000,
-    key: [key.cookieKey]
+    keys: [key.cookieKey]
   })
 );
 app.use(passport.initialize());
